@@ -2,6 +2,8 @@ import yfinance as yf
 import streamlit as st
 import plotly.graph_objects as go
 from datetime import datetime
+import appdirs as ad
+ad.user_cache_dir = lambda *args: "/tmp"
 
 # Function to fetch historical cryptocurrency data
 def get_crypto_data(symbol, start_date, end_date):
