@@ -30,6 +30,8 @@ def get_binance_data(symbol, start_date, end_date):
         return df
     else:
         st.error(f"Error: {response.status_code}")
+        return pd.DataFrame()  # Return an empty DataFrame on error
+
 
 # Streamlit app
 st.title(":orange[Crypto Currency Visualization App]")
