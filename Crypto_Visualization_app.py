@@ -48,8 +48,12 @@ crypto_data = get_crypto_data(crypto_symbol, start_date, end_date)
 num_rows = st.sidebar.slider('Select the number of rows to display:', min_value=1, max_value=len(crypto_data), value=5)
 
 # Display the selected number of rows
+#st.write(f'**:green[{crypto_symbol} Historical Data (OHLC) (Top {num_rows} rows)]**')
+#st.write(crypto_data.tail(num_rows)).
+# Display the selected number of rows in descending order
 st.write(f'**:green[{crypto_symbol} Historical Data (OHLC) (Top {num_rows} rows)]**')
-st.write(crypto_data.tail(num_rows))
+st.write(crypto_data.sort_index(ascending=False).head(num_rows))
+
 
 # Line chart with all values (Open, High, Low, Close)
 #st.write(f'**:green[{crypto_symbol} OHLC Prices Over Time]**')
