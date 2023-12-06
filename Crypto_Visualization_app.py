@@ -49,7 +49,7 @@ num_rows = st.sidebar.slider('Select the number of rows to display:', min_value=
 
 # Display the selected number of rows
 st.write(f'**:green[{crypto_symbol} Historical Data (OHLC) (Top {num_rows} rows)]**')
-st.write(crypto_data.head(num_rows))
+st.write(crypto_data.tail(num_rows))
 
 # Line chart with all values (Open, High, Low, Close)
 #st.write(f'**:green[{crypto_symbol} OHLC Prices Over Time]**')
